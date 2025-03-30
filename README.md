@@ -97,6 +97,8 @@ CREATE TABLE email_analytics (
 
 ![Analytics](https://github.com/Prerana-03/AI_EMAIL_PRO/blob/main/screenshots/Screenshot%202025-03-31%20023544.png)
 
+![Analytics](https://github.com/Prerana-03/AI_EMAIL_PRO/blob/main/screenshots/Screenshot%202025-03-31%20030941.png)
+
 ## 🎥 Demo
 
 [▶ Watch Demo](https://drive.google.com/file/d/144PP9XRYpdl4vVqyeV4lw3RTjUsYDaT8/view?usp=sharing)
