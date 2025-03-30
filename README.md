@@ -1,5 +1,15 @@
 AI Email Automation
 📧 AI Email Automation is a web application built with Vite, React, and TypeScript, designed to help users compose emails, manage their inbox, and analyze email data efficiently.
+## 📸 Screenshots
+
+### ✉️ AI Email Composer  
+![Email Composer](https://github.com/Prerana-03/AI_EMAIL_PRO/raw/main/project/screenshots/compose.jpg)
+
+### 📥 Inbox Management  
+![Inbox Management](https://github.com/Prerana-03/AI_EMAIL_PRO/raw/main/project/screenshots/inbox.jpg)
+
+### 📊 Analytics Dashboard  
+![Analytics Dashboard](https://github.com/Prerana-03/AI_EMAIL_PRO/raw/main/project/screenshots/analytics.jpg)
 
 ✨ Features
 ✅ Compose Emails – Create and send emails effortlessly using the AI-powered Email Composer.
