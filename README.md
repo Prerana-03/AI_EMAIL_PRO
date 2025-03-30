@@ -1,128 +1,84 @@
-AI Email Automation
-📧 AI Email Automation is a web application built with Vite, React, and TypeScript, designed to help users compose emails, manage their inbox, and analyze email data efficiently.
-## 📸 Screenshots
+# AI Email Pro
 
-### ✉️ AI Email Composer  
-![Email Composer](https://github.com/Prerana-03/AI_EMAIL_PRO/raw/main/project/screenshots/compose.jpg)
+A modern email automation platform built with React, TypeScript, and Supabase. This application provides an intuitive interface for composing emails, tracking analytics, and managing email campaigns.
 
-### 📥 Inbox Management  
-![Inbox Management](https://github.com/Prerana-03/AI_EMAIL_PRO/raw/main/project/screenshots/inbox.jpg)
+## Features
 
-### 📊 Analytics Dashboard  
-![Analytics Dashboard](https://github.com/Prerana-03/AI_EMAIL_PRO/raw/main/project/screenshots/analytics.jpg)
+- **Email Composition**: Modern interface for composing and sending emails
+- **Analytics Dashboard**: Real-time tracking of email metrics including:
+  - Total emails sent
+  - Open rates
+  - Active recipients
+  - Average response time
+- **Real-time Updates**: Instant analytics updates when emails are sent or opened
+- **Responsive Design**: Works seamlessly on desktop and mobile devices
 
-✨ Features
-✅ Compose Emails – Create and send emails effortlessly using the AI-powered Email Composer.
-✅ Inbox Management – View, search, and organize incoming emails with ease.
-✅ AI-Powered Email Generation – Generate email content using OpenAI's API.
-✅ Analytics Dashboard – Track email engagement with detailed insights and visual charts.
-✅ Secure Authentication – User authentication and data storage via Supabase.
-✅ Fast Performance – Built using Vite for lightning-fast development and bundling.
+## Tech Stack
 
-🛠️ Technologies Used
-React – A JavaScript library for building user interfaces.
+- **Frontend**: React + TypeScript
+- **Styling**: Tailwind CSS
+- **Backend**: Supabase
+- **Build Tool**: Vite
+- **Icons**: Lucide React
 
-TypeScript – A strongly typed superset of JavaScript.
+## Getting Started
 
-Vite – A fast build tool and development server.
+1. Clone the repository:
 
-Lucide React – Icon library for UI elements.
+   ```bash
+   git clone <your-repo-url>
+   cd ai-email-pro
+   ```
 
-Supabase – Database and authentication backend.
+2. Install dependencies:
 
-date-fns – Date manipulation library for better time management.
+   ```bash
+   npm install
+   ```
 
-Tailwind CSS – Utility-first CSS framework for styling.
+3. Create a `.env` file in the root directory and add your Supabase credentials:
 
-📂 Project Structure
-csharp
-Copy
-Edit
-ai-email-automation/
-│── public/                # Static assets
-│── src/                   
-│   ├── components/        # Reusable UI components
-│   │   ├── EmailComposer.tsx  # AI-powered email generation
-│   │   ├── EmailList.tsx      # Inbox & email management
-│   │   ├── Analytics.tsx      # Email analytics & insights
-│   ├── App.tsx           # Main application entry
-│   ├── main.tsx          # React root file
-│── package.json          # Project dependencies
-│── vite.config.ts        # Vite configuration
-│── README.md             # Project documentation
-🚀 Installation & Setup
-Follow these steps to set up the project locally:
+   ```
+   VITE_SUPABASE_URL=your_supabase_project_url
+   VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
+   ```
 
-1️⃣ Clone the Repository
-sh
-Copy
-Edit
-git clone <repository-url>
-cd ai-email-automation
-2️⃣ Install Dependencies
-sh
-Copy
-Edit
-npm install
-3️⃣ Configure Environment Variables
-Create a .env file in the root directory and add your Supabase and OpenAI API credentials:
+4. Start the development server:
 
-ini
-Copy
-Edit
-VITE_SUPABASE_URL=<your-supabase-url>
-VITE_SUPABASE_ANON_KEY=<your-supabase-anon-key>
-VITE_OPENAI_API_KEY=<your-openai-api-key>
-4️⃣ Start the Development Server
-sh
-Copy
-Edit
-npm run dev
-Then, open http://localhost:3000 in your browser to view the app.
+   ```bash
+   npm run dev
+   ```
 
-📡 API Integration
-1️⃣ OpenAI API (AI Email Generation)
-We use OpenAI's API to generate email content. The API call is handled through a secure Edge Function to keep API keys safe.
+5. Open [http://localhost:5173](http://localhost:5173) to view the application
 
-2️⃣ Supabase (Database & Authentication)
-Stores user data and email logs.
+## Database Setup
 
-Implements authentication for secure access.
+The application requires a Supabase database with the following table:
 
-📜 Available Scripts
-Command	Description
-npm run dev	Start the development server
-npm run build	Build the project for production
-npm run preview	Preview the production build
-npm run lint	Check code for linting errors
-🔄 Future Enhancements
-🔹 Real-time Email Status Updates using WebSockets
-🔹 More AI Models for personalized email responses
-🔹 Multi-Language Support for global reach
+```sql
+CREATE TABLE email_analytics (
+    id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+    recipient TEXT NOT NULL,
+    subject TEXT NOT NULL,
+    content TEXT NOT NULL,
+    sent_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
+    status TEXT NOT NULL CHECK (status IN ('sent', 'failed')),
+    open_count INTEGER NOT NULL DEFAULT 0,
+    last_opened_at TIMESTAMPTZ
+);
+```
 
-🤝 Contributing
-Contributions are welcome! If you have ideas or bug fixes, follow these steps:
+## Available Scripts
 
-Fork the repository
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run preview`: Preview production build
+- `npm run lint`: Run ESLint
 
-Create a new feature branch:
+## Contributing
 
-sh
-Copy
-Edit
-git checkout -b feature-branch
-Make your changes and commit them:
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-sh
-Copy
-Edit
-git commit -m "Added new feature"
-Push to your fork and create a pull request
+## License
 
-📄 License
-This project is licensed under the MIT License.
-
-🎥 Demo & Walkthrough
-🔗 Video Demo: https://drive.google.com/file/d/19eaU9UvjFKIyP9vHy4nXNAQRGTUh-Y5V/view?usp=sharing
-
-🎉 Happy Coding! 🚀
+This project is licensed under the MIT License - see the LICENSE file for details.
